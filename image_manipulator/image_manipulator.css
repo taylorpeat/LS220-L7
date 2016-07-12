@@ -4,17 +4,20 @@
 #col2 {
   width: 50%;
   float: left;
-  height: 1000px;
+  min-height: 1000px;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
 #col1 {
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #col2 {
-  background-color: rgba(0, 255, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 img {
   width: 100%;
+  margin-bottom: 30px;
 }
