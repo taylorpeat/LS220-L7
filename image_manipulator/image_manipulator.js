@@ -31,6 +31,8 @@ $(function() {
     },
     grayscaleConversion: function() {
       var image_data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      
+      // GRAYSCALE
       for ( i = 0; i < image_data.data.length; i += 4 ) {
         var grey = image_data.data[i] * 0.3086 + image_data.data[i + 1] * 0.6094 + image_data.data[i + 2] * 0.0820;
         image_data.data[i] = grey;
@@ -38,6 +40,48 @@ $(function() {
         image_data.data[i + 2] = grey;
         image_data.data[i + 3] = 255;
       }
+
+      // INVERT COLOURS
+      // for ( i = 0; i < image_data.data.length; i += 4 ) {
+      //   image_data.data[i] = 255 - image_data.data[i];
+      //   image_data.data[i + 1] = 255 - image_data.data[i + 1];
+      //   image_data.data[i + 2] = 255 - image_data.data[i + 2];
+      // }
+
+      //REMOVE RED
+      // for ( i = 0; i < image_data.data.length; i += 4 ) {
+      //   image_data.data[i] = 0;
+      // }
+
+      //REMOVE GREEN
+      // for ( i = 0; i < image_data.data.length; i += 4 ) {
+      //   image_data.data[i + 1] = 0;
+      // }
+
+      //REMOVE BLUE      
+      // for ( i = 0; i < image_data.data.length; i += 4 ) {
+      //   image_data.data[i + 2] = 0;
+      // }
+
+      //BLACK AND WHITE
+      // for ( i = 0; i < image_data.data.length; i += 4 ) {
+      //   var grey = image_data.data[i] * 0.3086 + image_data.data[i + 1] * 0.6094 + image_data.data[i + 2] * 0.0820,
+      //       green = 255;
+      //   if (grey < 60) {
+      //     grey = 0;
+      //     green = 0;
+      //   } else if (grey < 150 && grey > 1) {
+      //     green = 100;
+      //     grey = 255;
+      //   } else {
+      //     grey = 255;
+      //   }
+      //   image_data.data[i] = grey;
+      //   image_data.data[i + 1] = green;
+      //   image_data.data[i + 2] = grey;
+      //   image_data.data[i + 3] = 255;
+      // }
+
       ctx.putImageData(image_data, 0, 0);
     },
     imageConversion: function() {
